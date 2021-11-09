@@ -4,7 +4,7 @@ This is a little description about your project.
 
 **Tech Stack:** MongoDB, Express.js, React.js, Node.js, Typescript
 
-**Contributors**: [Hatchways](https://github.com/hatchways) (replace)
+**Contributors**: Andrew Hodge, Hatchways Team
 
 ---
 
@@ -30,6 +30,10 @@ This is a little description about your project.
 3. Run `npm start` to start the client side
 
 ---
+
+## Test
+
+1. Run `npm test` to run all tests in test directory
 
 ### Demo
 
