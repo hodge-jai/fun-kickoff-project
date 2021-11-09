@@ -33,7 +33,8 @@ This is a little description about your project.
 
 ## Test
 
-1. Run `npm test` to run all tests in test directory
+1. Go into the server directory `cd server`
+2. Run `npm test` to run all tests in test directory
 
 ### Demo
 
