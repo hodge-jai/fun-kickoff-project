@@ -57,6 +57,7 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
             InputProps={{
               classes: { input: classes.inputs },
             }}
+            variant="outlined"
             name="email"
             autoComplete="email"
             autoFocus
@@ -77,6 +78,7 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
               classes: { input: classes.inputs },
               endAdornment: <Typography className={classes.forgot}>Forgot?</Typography>,
             }}
+            variant="outlined"
             type="password"
             autoComplete="current-password"
             helperText={touched.password ? errors.password : ''}
