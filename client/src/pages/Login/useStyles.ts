@@ -15,7 +15,6 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'space-between',
     flexDirection: 'column',
     minHeight: '100%',
-    paddingTop: 15,
   },
   welcome: {
     fontSize: 26,

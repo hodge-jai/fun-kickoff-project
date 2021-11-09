@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import Typography from '@material-ui/core/Typography';
 import useStyles from './useStyles';
 import { CircularProgress } from '@material-ui/core';
+import AuthHeader from '../../../components/AuthHeader/AuthHeader';
 
 interface Props {
   handleSubmit: (
@@ -91,7 +92,7 @@ export default function Login({ handleSubmit }: Props): JSX.Element {
               {isSubmitting ? <CircularProgress style={{ color: 'white' }} /> : 'Login'}
             </Button>
           </Box>
-          <div style={{ height: 95 }} />
+          <AuthHeader linkTo="/signup" asideText="Not a member?" btnText="Sign Up" />
         </form>
       )}
     </Formik>
