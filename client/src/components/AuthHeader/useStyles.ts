@@ -1,13 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-  authHeader: {
-    alignSelf: 'center',
-    justifyContent: 'center',
-    alignItems: 'center',
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
   accAside: {
     fontSize: 14,
     color: '#000000',

@@ -13,7 +13,7 @@ const AuthHeader = ({ linkTo, asideText, btnText }: Props): JSX.Element => {
   const classes = useStyles();
 
   return (
-    <Box p={1} className={classes.authHeader}>
+    <Box p={1} display="flex" alignSelf="center" justifyContent="center" alignItems="center" flexWrap="wrap">
       <Typography className={classes.accAside}>{asideText}</Typography>
       <Link to={linkTo} color="primary" className={classes.link}>
         {btnText}
