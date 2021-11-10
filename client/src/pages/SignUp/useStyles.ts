@@ -17,12 +17,7 @@ const useStyles = makeStyles(() => ({
     minHeight: '100%',
   },
   welcome: {
-    fontSize: 26,
     paddingBottom: 20,
-    color: '#000000',
-    fontWeight: 700,
-    fontFamily: "'Roboto'",
-    textAlign: 'center',
   },
 }));
 

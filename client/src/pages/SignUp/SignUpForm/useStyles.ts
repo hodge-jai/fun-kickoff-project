@@ -15,10 +15,6 @@ const useStyles = makeStyles((theme) => ({
     height: '2rem',
     padding: '5px',
   },
-  forgot: {
-    paddingRight: 10,
-    color: '#f14140',
-  },
   submit: {
     margin: theme.spacing(3, 2, 2),
     padding: 10,

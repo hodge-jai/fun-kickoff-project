@@ -9,7 +9,7 @@ interface Props {
   btnText: string;
 }
 
-const AuthHeader = ({ linkTo, asideText, btnText }: Props): JSX.Element => {
+const AuthFooter = ({ linkTo, asideText, btnText }: Props): JSX.Element => {
   const classes = useStyles();
 
   return (
@@ -22,4 +22,4 @@ const AuthHeader = ({ linkTo, asideText, btnText }: Props): JSX.Element => {
   );
 };
 
-export default AuthHeader;
+export default AuthFooter;

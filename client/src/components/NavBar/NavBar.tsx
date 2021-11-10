@@ -14,20 +14,16 @@ export default function NavBar(): JSX.Element {
     <AppBar position="static">
       <ToolBar className={classes.toolbar}>
         <img src={logo} alt="logo" />
-        <Grid className={classes.loginsignup}>
+        <Grid className={classes.loginSignup}>
           <Box p={1}>
-            <Link to="/login" className={classes.link}>
-              <Button color="primary" size="large" variant="outlined">
-                LOGIN
-              </Button>
-            </Link>
+            <Button component={Link} to="/login" color="primary" size="large" variant="outlined">
+              Login
+            </Button>
           </Box>
           <Box p={1}>
-            <Link to="signup" className={classes.link}>
-              <Button color="primary" size="large" variant="contained">
-                SIGN UP
-              </Button>
-            </Link>
+            <Button component={Link} to="/signup" color="primary" size="large" variant="contained">
+              Sign Up
+            </Button>
           </Box>
         </Grid>
       </ToolBar>

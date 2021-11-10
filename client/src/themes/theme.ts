@@ -8,13 +8,19 @@ export const theme = createMuiTheme({
       fontFamily: '"Roboto"',
       fontWeight: 'bold',
     },
+    body1: {
+      color: '#f14140',
+    },
     h5: {
-      fontFamily: '"Roboto"',
-      fontWeight: 'bold',
+      fontSize: 26,
+      color: '#000000',
+      fontWeight: 700,
+      fontFamily: "'Roboto'",
+      textAlign: 'center',
     },
   },
   palette: {
-    primary: { main: '#ff002b' },
+    primary: { main: '#f14140' },
   },
   shape: {
     borderRadius: 5,

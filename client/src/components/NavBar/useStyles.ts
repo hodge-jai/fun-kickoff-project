@@ -7,10 +7,11 @@ const useStyles = makeStyles(() => ({
     minHeight: 56,
     backgroundColor: '#FFFFFF',
   },
-  loginsignup: {
+  loginSignup: {
     display: 'flex',
     justifyContent: 'flex-start',
     marginRight: 20,
+    textTransform: 'uppercase',
   },
   link: { textDecoration: 'none' },
 }));
