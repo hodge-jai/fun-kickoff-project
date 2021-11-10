@@ -10,6 +10,12 @@ const profileSchema = new mongoose.Schema({
   description: {
     type: String,
   },
+  address: {
+    type: String
+  },
+  dateOfBirth: {
+    type: Date
+  },
   availability: {
     type: [Date],
   },
