@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 
+const timeSlot = new mongoose.Schema({ start: Date, end: Date });
+
 const profileSchema = new mongoose.Schema({
   firstName: {
     type: String,
@@ -11,17 +13,17 @@ const profileSchema = new mongoose.Schema({
     type: String,
   },
   address: {
-    type: String
+    type: String,
   },
   dateOfBirth: {
-    type: Date
+    type: Date,
   },
   availability: {
-    type: [Date],
+    type: [timeSlot],
   },
   photo: {
     type: String,
-  }
+  },
 });
 
 module.exports = User = mongoose.model("Profile", profileSchema);
