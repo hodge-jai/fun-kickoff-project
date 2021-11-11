@@ -1,17 +1,20 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
+  appbar: {
+    maxHeight: 100,
+  },
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
-    minHeight: 56,
+    height: '100%',
     backgroundColor: '#FFFFFF',
   },
-  loginSignup: {
+  navButtons: {
     display: 'flex',
-    justifyContent: 'flex-start',
-    marginRight: 20,
-    textTransform: 'uppercase',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    marginRight: 40,
   },
   link: { textDecoration: 'none' },
 }));

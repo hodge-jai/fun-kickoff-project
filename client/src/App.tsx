@@ -23,6 +23,15 @@ function App(): JSX.Element {
                 <Route exact path="/dashboard">
                   <Dashboard />
                 </Route>
+                <Route exact path="/myjobs">
+                  <Dashboard />
+                </Route>
+                <Route exact path="/messages">
+                  <Dashboard />
+                </Route>
+                <Route exact path="/mysitters">
+                  <Dashboard />
+                </Route>
                 <Route path="*">
                   <Redirect to="/login" />
                 </Route>
