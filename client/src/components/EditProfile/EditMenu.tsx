@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 import useStyles from './useStyles';
 import logo from '../../Images/logo.png';
+import { useAuth } from '../../context/useAuthContext';
 import { User } from '../../interface/User';
 import AuthMenu from '../AuthMenu/AuthMenu';
 
@@ -17,6 +18,7 @@ interface Props {
 
 const NavBar = ({ loggedInUser }: Props): JSX.Element => {
   const classes = useStyles();
+  console.log(loggedInUser);
 
   return (
     <AppBar className={classes.appbar} position="sticky">
