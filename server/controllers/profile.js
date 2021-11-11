@@ -1,47 +1,35 @@
 const Profile = require("../models/Profile");
+const User = require("../models/User");
 const asyncHandler = require("express-async-handler");
 
 // @route POST /profile/edit
-// @desc Register user
+// @desc edit user profile
 // @access Public
 exports.editProfile = asyncHandler(async (req, res, next) => {
-  const {
-    firstName,
-    lastName,
-    description,
-    address,
-    dateOfBirth,
-    availability,
-    photo,
-  } = req.body;
+  const user = await User.findById(req.user.id);
 
-  const profile = await Profile.findOneAndUpdate(
-    { _id: req.user.profile._id },
-    { $set: req.body },
-    {
-      upsert: true,
-      new: true,
-    }
-  );
-
-  if (!profile) {
+  if (!user) {
     res.status(404);
-    throw new Error("Profile doesn't exist");
+    throw new Error("User doesn't exist");
   }
-  res.status(200).json({
-    success: {
-      profile: {
-        id: profile._id,
+  try {
+    user.profile.set(req.body);
+    const updated_user = await user.save();
+    res.status(200).json({
+      success: {
+        profile: updated_user.profile,
       },
-    },
-  });
+    });
+  } catch (err) {
+    res.status(500).send(err);
+  }
 });
 
 // @route GET /profile/load
-// @desc Get user data with valid token
+// @desc Get user profile data
 // @access Private
 exports.loadProfile = asyncHandler(async (req, res, next) => {
-  const profile = await User.findById(req.user.id, 'profile');
+  const profile = await User.findById(req.user.id, "profile");
 
   if (!profile) {
     res.status(401);
@@ -50,16 +38,7 @@ exports.loadProfile = asyncHandler(async (req, res, next) => {
 
   res.status(200).json({
     success: {
-      profile: {
-        id: profile._id,
-        firstName: profile.firstName,
-        lastName: profile.lastName,
-        description: profile.description,
-        address: profile.address,
-        dateOfBirth: profile.dateOfBirth,
-        availability: profile.availability,
-        photo: profile.photo,
-      },
+      profile: profile
     },
   });
 });
