@@ -6,8 +6,8 @@ const {
   loadProfile,
 } = require('../controllers/profile');
 
-router.route('/edit').post(protect, loginProfile);
+router.route('/edit').post(protect, editProfile);
 
-router.route('/profile').get(protect, loadProfile);
+router.route('/load').get(protect, loadProfile);
 
 module.exports = router;

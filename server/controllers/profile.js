@@ -1,8 +1,7 @@
 const Profile = require("../models/Profile");
 const asyncHandler = require("express-async-handler");
-const generateToken = require("../utils/generateToken");
 
-// @route POST /auth/register
+// @route POST /profile/edit
 // @desc Register user
 // @access Public
 exports.editProfile = asyncHandler(async (req, res, next) => {
@@ -38,11 +37,11 @@ exports.editProfile = asyncHandler(async (req, res, next) => {
   });
 });
 
-// @route GET /auth/user
+// @route GET /profile/load
 // @desc Get user data with valid token
 // @access Private
 exports.loadProfile = asyncHandler(async (req, res, next) => {
-  const profile = await Profile.findById(req.user.profile);
+  const profile = await User.findById(req.user.id, 'profile');
 
   if (!profile) {
     res.status(401);
