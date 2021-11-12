@@ -7,6 +7,7 @@ const useStyles = makeStyles(() => ({
   dashboard: {
     backgroundColor: '#FFFFFF',
     flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
   },
 }));

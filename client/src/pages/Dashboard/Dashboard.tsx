@@ -36,15 +36,6 @@ export default function Dashboard(component: Props): JSX.Element {
   return (
     <Grid container component="main" className={`${classes.root} ${classes.dashboard}`}>
       <CssBaseline />
-      <NavBar loggedInUser={loggedInUser} />
-      <Grid item xs={12} sm={8} md={7} elevation={6} component={Paper} square>
-        <Box width="100%" maxWidth={450} p={3} alignSelf="center">
-          <Grid container>
-            <Grid item xs></Grid>
-          </Grid>
-        </Box>
-        <Box p={1} alignSelf="center" />
-      </Grid>
     </Grid>
   );
 }

@@ -1,14 +1,14 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
-  appbar: {
-    maxHeight: 100,
-  },
-  toolbar: {
+  navButtons: {
     display: 'flex',
-    justifyContent: 'space-between',
-    height: '100%',
-    backgroundColor: '#FFFFFF',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    marginRight: 40,
+    '& > *': {
+      margin: 10,
+    },
   },
   link: { textDecoration: 'none' },
 }));
