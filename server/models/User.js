@@ -1,4 +1,3 @@
-const Profile = require("./Profile");
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
 
@@ -22,9 +21,9 @@ const userSchema = new mongoose.Schema({
     default: Date.now,
   },
   profile: {
-    type: Profile.schema,
-    default: new Profile(),
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
+    ref: "Profile",
   },
 });
 

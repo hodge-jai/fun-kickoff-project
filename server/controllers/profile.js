@@ -12,17 +12,13 @@ exports.editProfile = asyncHandler(async (req, res, next) => {
     res.status(404);
     throw new Error("User doesn't exist");
   }
-  try {
-    user.profile.set(req.body);
-    const updated_user = await user.save();
-    res.status(200).json({
-      success: {
-        profile: updated_user.profile,
-      },
-    });
-  } catch (err) {
-    res.status(500).send(err);
-  }
+  user.profile.set(req.body);
+  const updatedUser = await user.save();
+  res.status(200).json({
+    success: {
+      profile: updated_user.profile,
+    },
+  });
 });
 
 // @route GET /profile/load
@@ -38,7 +34,7 @@ exports.loadProfile = asyncHandler(async (req, res, next) => {
 
   res.status(200).json({
     success: {
-      profile: profile
+      profile: profile,
     },
   });
 });

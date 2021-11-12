@@ -1,4 +1,5 @@
 const User = require("../models/User");
+const Profile = require("../models/Profile");
 const asyncHandler = require("express-async-handler");
 const generateToken = require("../utils/generateToken");
 
@@ -21,11 +22,14 @@ exports.registerUser = asyncHandler(async (req, res, next) => {
     res.status(400);
     throw new Error("A user with that username already exists");
   }
+  const newProfile = await Profile.create();
+  const profile = newProfile.id
 
   const user = await User.create({
     username,
     email,
     password,
+    profile,
   });
 
   if (user) {
