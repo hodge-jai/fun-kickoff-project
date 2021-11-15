@@ -7,7 +7,7 @@ const useStyles = makeStyles(() => ({
       borderBottom: '1.2px solid rgba(0, 0, 0, 0.2)',
     },
     justifyContent: 'center',
-    alignItems: 'flex-start',
+    alignItems: 'center',
   },
   authWrapper: {
     display: 'flex',

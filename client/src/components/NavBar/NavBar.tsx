@@ -1,32 +1,44 @@
-import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import ToolBar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
-import { Link } from 'react-router-dom';
 import useStyles from './useStyles';
 import logo from '../../Images/logo.png';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { useAuth } from '../../context/useAuthContext';
+import { useSocket } from '../../context/useSocketContext';
+import { useHistory } from 'react-router-dom';
+import { useEffect } from 'react';
+import LoggedInBar from './AuthBars/LoggedInBar';
+import LoggedOutBar from './AuthBars/LoggedOutBar';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
-export default function NavBar(): JSX.Element {
+const NavBar = (): JSX.Element => {
   const classes = useStyles();
 
+  const { loggedInUser } = useAuth();
+  const { initSocket } = useSocket();
+
+  const history = useHistory();
+
+  useEffect(() => {
+    initSocket();
+  }, [initSocket]);
+
+  if (loggedInUser === undefined) return <CircularProgress />;
+  if (!loggedInUser && history.location.pathname !== '/login' && history.location.pathname !== '/signup') {
+    history.push('/login');
+    // loading for a split seconds until history.push works
+    return <CircularProgress />;
+  }
+
   return (
-    <AppBar position="static">
+    <AppBar className={classes.appbar} position="absolute">
+      <CssBaseline />
       <ToolBar className={classes.toolbar}>
         <img src={logo} alt="logo" />
-        <Grid className={classes.loginSignup}>
-          <Box p={1}>
-            <Button component={Link} to="/login" color="primary" size="large" variant="outlined">
-              Login
-            </Button>
-          </Box>
-          <Box p={1}>
-            <Button component={Link} to="/signup" color="primary" size="large" variant="contained">
-              Sign Up
-            </Button>
-          </Box>
-        </Grid>
+        {loggedInUser ? <LoggedInBar /> : <LoggedOutBar />}
       </ToolBar>
     </AppBar>
   );
-}
+};
+
+export default NavBar;
