@@ -1,22 +1,28 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles(() => ({
-  appbar: {
-    maxHeight: 100,
-  },
-  toolbar: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    height: '100%',
-    backgroundColor: '#FFFFFF',
-  },
-  navButtons: {
-    display: 'flex',
-    justifyContent: 'space-evenly',
+  root: {
+    minHeight: '100vh',
+    '& .MuiInput-underline:before': {
+      borderBottom: '1.2px solid rgba(0, 0, 0, 0.2)',
+    },
+    justifyContent: 'center',
     alignItems: 'center',
-    marginRight: 40,
   },
-  link: { textDecoration: 'none' },
+  tabContainer: {
+    flexGrow: 1,
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    height: 224,
+  },
+  tabs: {
+    borderRight: 1,
+    borderColor: 'divider',
+  },
+  tabComponents: {
+    flexGrow: 2,
+  },
 }));
 
 export default useStyles;

@@ -9,7 +9,6 @@ import register from '../../helpers/APICalls/register';
 import SignUpForm from './SignUpForm/SignUpForm';
 import { useAuth } from '../../context/useAuthContext';
 import { useSnackBar } from '../../context/useSnackbarContext';
-import NavBar from '../../components/NavBar/NavBar';
 
 export default function Register(): JSX.Element {
   const classes = useStyles();

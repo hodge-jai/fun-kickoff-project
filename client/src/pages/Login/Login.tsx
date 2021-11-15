@@ -9,7 +9,6 @@ import login from '../../helpers/APICalls/login';
 import LoginForm from './LoginForm/LoginForm';
 import { useAuth } from '../../context/useAuthContext';
 import { useSnackBar } from '../../context/useSnackbarContext';
-import NavBar from '../../components/NavBar/NavBar';
 
 export default function Login(): JSX.Element {
   const classes = useStyles();

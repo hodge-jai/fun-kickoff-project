@@ -5,7 +5,6 @@ const useStyles = makeStyles(() => ({
     minHeight: '100vh',
   },
   dashboard: {
-    backgroundColor: '#FFFFFF',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
