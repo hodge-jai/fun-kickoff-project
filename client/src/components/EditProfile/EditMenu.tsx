@@ -18,12 +18,9 @@ interface Props {
 
 const NavBar = ({ loggedInUser }: Props): JSX.Element => {
   const classes = useStyles();
-  console.log(loggedInUser);
 
   return (
-    <div>
-      
-    </div>
+    <Box></Box>
   );
 };
 
