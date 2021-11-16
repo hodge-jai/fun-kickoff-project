@@ -10,6 +10,12 @@ const useStyles = makeStyles(() => ({
     height: '100%',
     backgroundColor: '#FFFFFF',
   },
+  navButtons: {
+    display: 'flex',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+    marginRight: 40,
+  },
   link: { textDecoration: 'none' },
 }));
 
